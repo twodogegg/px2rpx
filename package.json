@@ -1,0 +1,51 @@
+{
+	"name": "px2rpx",
+	"description": "在 Hbuilder 中自动将 px 转化成 rpx",
+	"version": "0.1.1",
+	"publisher": "舒柳",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension",
+	"activationEvents": [
+		"onCommand:extension.px2rpx",
+		"onCommand:extension.closePx2rpx"
+	],
+	"contributes": {
+		"commands": [{
+			"command": "extension.px2rpx",
+			"title": "px2rpx"
+		},
+		{
+			"command": "extension.closePx2rpx",
+			"title": "关闭px2rpx"
+		}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.px2rpx",
+					"group": "z_commands",
+					"title": "px2rpx",
+					"when": "editorTextFocus && !activeEditor.readonly"
+				},
+				{
+					"command": "extension.closePx2rpx",
+					"group": "z_commands",
+					"title": "关闭px2rpx",
+					"when": "editorTextFocus && !activeEditor.readonly"
+				},
+				{
+					"group": "z_commands"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"dependencies": {}
+}
