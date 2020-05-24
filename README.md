@@ -2,23 +2,23 @@
 
 ## 使用方式
 
->1. 下载并解压后。安装到 `HbuilderX` 中的插件目录，然后重启即可
+1. 下载并解压后。安装到 `HbuilderX` 中的插件目录，然后重启即可
      mac 目录 `/Applications/HBuilderX.app/Contents/HBuilderX/plugins/`
->2. 在编辑器中右键，选择 px2rpx，或者 关闭 px2rpx
->3. 试试改动代码然后保存
+2. 在编辑器中右键，选择 px2rpx，或者 关闭 px2rpx
+3. 试试改动代码然后保存
 
 
 ## 示例
 
->1. 自动转化 emmet 语法
-```css
+1. 自动转化 emmet 语法
+```
 # 按下tab键保存试试
 div {
     w20+h20
 }
 ```
->2. 蓝湖复制来的代码自动转化
-```css
+2. 蓝湖复制来的代码自动转化
+```
 div {
 	width: 20px;
 	height: 20px;
