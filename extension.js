@@ -12,7 +12,7 @@ function activate(context) {
 			}
             let doc = event.document;
             let text = doc.getText();
-            	let newtext = text.replace(/(?<=\d+)px(?!\()/g, 'rpx');
+            	let newtext = text.replace(/(?<=^[0-9]{2,}|[2-9])px(?!\()/g, 'rpx')
             	const diffs = diff.stringDiff(text, newtext, false);
             	let workspaceEdit = new hx.WorkspaceEdit();
             	let edits = [];
