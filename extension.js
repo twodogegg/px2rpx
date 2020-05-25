@@ -5,17 +5,13 @@ function activate(context) {
     let disposable = hx.commands.registerCommand('extension.px2rpx', () => {
 		let config = hx.workspace.getConfiguration();
 		sets("close", "0","px2rpx开启成功！！！!")
-        let onDidChangeTextDocumentEventDispose = hx.workspace.onWillSaveTextDocument(function(event) {
+        hx.workspace.onWillSaveTextDocument(function(event) {
 			let close = config.get("close", false);
-			console.log(close)
 			if (Number.parseInt(close) > 0) {
 				return false;
 			}
             let doc = event.document;
-            let fileName = doc.fileName;
-            if (fileName.search('.less')) {
-            	console.log(fileName)
-            	let text = doc.getText();
+            let text = doc.getText();
             	let newtext = text.replace(/(?<=\d+)px/g, 'rpx');
             	const diffs = diff.stringDiff(text, newtext, false);
             	let workspaceEdit = new hx.WorkspaceEdit();
@@ -28,10 +24,9 @@ function activate(context) {
             	}
             	workspaceEdit.set(doc.uri, edits);
             	hx.workspace.applyEdit(workspaceEdit);
-            }
         });
     });
-	let setbaidu = hx.commands.registerCommand('extension.closePx2rpx', () => {
+	hx.commands.registerCommand('extension.closePx2rpx', () => {
 		sets("close", "1","px2rpx关闭成功!")
 	});
 	
